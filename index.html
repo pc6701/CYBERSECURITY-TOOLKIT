@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Toolkit | SOC Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./icon.png">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00ff66;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            margin: 0;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        .terminal {
+            max-width: 900px;
+            margin: 40px auto 0 auto;
+            background-color: #000000;
+            border: 1px solid #00ff66;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 255, 102, 0.5);
+        }
+
+        .log-line {
+            margin: 8px 0;
+            display: none; 
+        }
+
+        .status-ok {
+            color: #00ff66;
+            font-weight: bold;
+        }
+
+        .status-warn {
+            color: #ff3333;
+            font-weight: bold;
+        }
+
+        .quote-box {
+            border-top: 1px dashed #00ff66;
+            border-bottom: 1px dashed #00ff66;
+            padding: 15px 0;
+            margin: 20px 0;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .cursor {
+            display: inline-block;
+            background-color: #00ff66;
+            width: 10px;
+            height: 18px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 49% { background-color: #00ff66; }
+            50%, 100% { background-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="terminal">
+<pre>
+================================================================================
+               __      __   _                      _ 
+               \ \    / /  | |                    | |
+                \ \  / /__ | | ___ ___  _ __ ___  | |
+                 \ \/ / _ \| |/ __/ _ \| '_ ` _ \ | |
+                  \  / (_) | | (_| (_) | | | | | ||_|
+                   \/ \___/|_|\___\___/|_| |_| |_|(_)
+                                                     
+                     TO THE CYBERSECURITY TOOLKIT
+================================================================================
+</pre>
+
+    <div class="log-line" id="line1">[+] INITIALIZING SYSTEM COMPONENTS...</div>
+    <div class="log-line" id="line2">[+] LOADING SECURE MODULES....................................... [<span class="status-ok"> OK </span>]</div>
+    <div class="log-line" id="line3">[+] CONFIGURING NETWORK INTERFACES............................... [<span class="status-ok"> OK </span>]</div>
+    <div class="log-line" id="line4">[+] ENGAGING FIREWALL AND DEFENSIVE LAYER........................ [<span class="status-ok"> OK </span>]</div>
+    <div class="log-line" id="line5">[+] INTEGRITY CHECK: SUITE SECURE................................ [<span class="status-ok"> OK </span>]</div>
+
+    <div class="log-line quote-box" id="line6">
+        "The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of everyday life."
+    </div>
+
+    <div class="log-line" id="line7">[!] SYSTEM READY.</div>
+    <div class="log-line" id="line8"><span class="status-warn">[!] WARNING: Unauthorized access is strictly prohibited. Use responsibly.</span></div>
+    
+    <div class="log-line" id="line9" style="margin-top: 20px;">
+        toolkit@sandbox:~$ launching_homepage... <span class="cursor"></span>
+    </div>
+</div>
+
+<script>
+    // Target page location
+    const HOME_PAGE_URL = 'homepage.html'; 
+
+    const lines = [
+        { id: 'line1', delay: 200 },
+        { id: 'line2', delay: 800 },
+        { id: 'line3', delay: 1400 },
+        { id: 'line4', delay: 1900 },
+        { id: 'line5', delay: 2300 },
+        { id: 'line6', delay: 2800 },
+        { id: 'line7', delay: 3400 },
+        { id: 'line8', delay: 3600 },
+        { id: 'line9', delay: 4100 }
+    ];
+
+    // Reveal terminal text step-by-step
+    lines.forEach(line => {
+        setTimeout(() => {
+            document.getElementById(line.id).style.display = 'block';
+        }, line.delay);
+    });
+
+    // Forced auto-redirect to homepage.html after the animation ends
+    setTimeout(() => {
+        window.location.href = './HOMEPAGE.html';
+    }, 5600); 
+</script>
+
+</body>
+</html>
